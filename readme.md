@@ -32,7 +32,7 @@ docker images
 ```
 
 ## Run docker image
-Run the docker image with port 50051 and port-forward to the host machine at port 50051. To run the image in interactive mode:\
+Run the docker image with port 50051 and port-forward to the host machine at port 50051. To run the image in interactive mode:
 ```
 docker run -p 50051:50051 -it [image-name]
 ```
