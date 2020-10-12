@@ -2,8 +2,8 @@
 - Install docker for your operating system: https://docs.docker.com/get-docker/
 -  Install Golang and protobuf:
 ```
-    brew install go
-    brew install protobuf
+brew install go
+brew install protobuf
 ```
 
 # gRPC
