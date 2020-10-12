@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "github.com/panyuenlau/mygrpc-server/proto";
+
+// a message is just an aggregate containing a set of typed fields
+// Many standard simple data types are available as tield types,
+// including bool, int32, float, double and string
+
+message Request {
+    string reqeustMessage = 1;
+}
+
+message Response {
+    string replyMessage = 1;
+}
+
+service Greeting {
+    rpc SayHello(Request) returns (Response) {}
+}
+
+/*
+    command to compile the .proto file:
+    export GOROOT=/usr/local/go
+    export GOPATH=$HOME/go
+    export GOBIN=$GOPATH/bin
+    export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN   
+    go get -u github.com/golang/protobuf/protoc-gen-go
+    protoc -I=/Users/darrelau/Documents/Projects/my-grpc/proto --go_out=/Users/darrelau/Documents/Projects/my-grpc/server/proto /Users/darrelau/Documents/Projects/my-grpc/proto/service.proto
+    protoc --proto_path=proto --proto_path=third-party --go_out=plugins=grpc:proto service.proto 
+*/
