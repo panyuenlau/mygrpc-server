@@ -25,7 +25,11 @@ service Greeting {
     export GOROOT=/usr/local/go
     export GOPATH=$HOME/go
     export GOBIN=$GOPATH/bin
-    export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN   
+    export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
+    export GOROOT=/usr/local/opt/go/libexec
+    export GOPATH=$HOME/go
+    export GOBIN=$GOPATH/bin
+    export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN  
     go get -u github.com/golang/protobuf/protoc-gen-go
     protoc -I=/Users/darrelau/Documents/Projects/my-grpc/proto --go_out=/Users/darrelau/Documents/Projects/my-grpc/server/proto /Users/darrelau/Documents/Projects/my-grpc/proto/service.proto
     protoc --proto_path=proto --proto_path=third-party --go_out=plugins=grpc:proto service.proto 
