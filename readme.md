@@ -6,10 +6,19 @@ brew install go
 brew install protobuf
 ```
 
+# Setup environment variables
+```
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
+```
+
 # gRPC
 ## Install the protocol compiler plugin
 ```
-go get google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.0
+go get -u google.golang.org/grpc
+go get -u github.com/golang/protobuf/protoc-gen-go
 ```
 
 ## Generate grpc client code from .proto service definition.
@@ -17,7 +26,6 @@ At the project directory, run:
 ```
 protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative proto/service.proto
 ```
-
 
 # Docker
 ## Build docker image
